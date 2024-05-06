@@ -5,7 +5,7 @@ if __name__ == "__main__":
     while True:
         try:
             module.banner(f"absensi siswa kelas {module.database['class']}")
-            choice = module.menu(["absensi siswa", "pantau kehadiran", "edit configurasi"], "keluar")
+            choice = module.menu(["absensi siswa", "pantau kehadiran", "petunjuk penggunaan aplikasi"], "keluar")
 
             module.clear()
             match choice:
@@ -18,7 +18,7 @@ if __name__ == "__main__":
                         continue
                     break
                 case 3:
-                    print("bennar")
+                    module.help()
                     continue
                 case 0:
                     module.loading_and_clear("Terima kasih (^-^)")

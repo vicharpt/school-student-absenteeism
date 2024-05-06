@@ -26,6 +26,7 @@ def absensi(siswa):
             status = input(f"Perbaikan untuk ({siswa[index-1]['name']}) >> ")
             status = format_status(status)
             siswa[index - 1]["status"] = status
+            clear
             continue
         elif status == "exit":
             loading_and_clear("Terima kasih (^-^)")
@@ -57,13 +58,14 @@ def absensi(siswa):
 
 def pantau_kehadiran():
     data_date, data = read(date)
-    print(data)
-    exit()
-    # if not data:
-    #     banner(f"{data_date['year']}/{data_date['month']}/{data_date['day']}")
-    #     loading_and_clear(error=True, message="File not found!")
-    # else:
-    #     banner("tentukan tahun/bulan/tanggal")
-    #     table_absensi(data)
-    #     return input("0: BACK >> ")
+    title = f"{data_date[0]}/{data_date[1]}/{data_date[2]}"
+    if not data:
+        banner(title)
+        loading_and_clear(error=True, message="Data tidak ditemukan!", s=3)
+        return "0"
+    else:
+        banner(title)
+        banner("tentukan tahun/bulan/tanggal jika ingin melihat history absensi", clear_screen=False)
+        table_absensi(data)
+        return input("0: BACK >> ")
     

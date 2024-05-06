@@ -1,6 +1,7 @@
 from string import ascii_letters, digits
+from .database import database
 
-chars = digits + ascii_letters + "|/,.-^ "
+chars = digits + ascii_letters + "\|/,.-^ "
 
 def shift(data, key, to=""):
     result = ""
@@ -13,14 +14,15 @@ def shift(data, key, to=""):
     return result
 
 def format_status(status):
+    information_status_symbol = database["information_status_symbol"]
     if status == "" or status == "1":
-        status = "hadir"
+        status = information_status_symbol["hadir"]
     elif status == "2":
-        status = "izin"
+        status = information_status_symbol["izin"]
     elif status == "3":
-        status = "sakit"
+        status = information_status_symbol["sakit"]
     elif status == "4":
-        status = "alpha"
+        status = information_status_symbol["alpha"]
     else:
         status = "?"
     return status
