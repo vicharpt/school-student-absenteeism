@@ -1,5 +1,5 @@
 from .database import database
-from .display import clear, banner, table_absensi, sleep, loading_and_clear
+from .display import clear, menu, banner, table_absensi, sleep, loading_and_clear
 from .code import shift, format_status
 from .files import create, read
 from .date import date, now
@@ -56,7 +56,7 @@ def absensi(siswa):
     create(data, date)
 
 
-def pantau_kehadiran():
+def monitor_student_attendance():
     data_date, data = read(date)
     title = f"{data_date[0]}/{data_date[1]}/{data_date[2]}"
     if not data:
@@ -68,4 +68,10 @@ def pantau_kehadiran():
         banner("tentukan tahun/bulan/tanggal jika ingin melihat history absensi", clear_screen=False)
         table_absensi(data)
         return input("0: BACK >> ")
-    
+
+
+def help_using_the_aplication():
+    while True:
+        banner("petunjuk penggunaan aplikasi")
+        choice = menu(database["library"]["menu"], "kembali")
+        break

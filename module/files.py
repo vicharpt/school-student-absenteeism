@@ -20,8 +20,7 @@ def file_action(date, mode="", data=""):
             data_date = data_raw[0].replace(",","_")
             data_dict[data_date] = data_raw[1].split(",")
 
-        key = f"{date['year']}_{date['month']}_{date['day']}"
-        return [date["year"],date["month"],date["day"]], data_dict[key]
+        return [date["year"],date["month"],date["day"]], data_dict[f"{date['year']}_{date['month']}_{date['day']}"]
 
 def create(data, date):
     os.makedirs("database", exist_ok=True)

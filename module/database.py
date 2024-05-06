@@ -2,7 +2,7 @@ import os
 import sys
 sys.path.append(os.getcwd())
 
-from data import siswa
+from data import siswa, perpustakan
 from configparser import ConfigParser
 
 config = ConfigParser()
@@ -25,5 +25,6 @@ database = {
         "month": config["date"]["month"],
         "day": config["date"]["day"]
     },
+    "library": perpustakan.petunjuk
 }
 

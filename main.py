@@ -13,13 +13,13 @@ if __name__ == "__main__":
                     module.absensi(module.database['siswa'])
                     continue
                 case 2:
-                    choice = module.pantau_kehadiran()
+                    choice = module.monitor_student_attendance()
                     if choice == "0":
                         continue
                     break
                 case 3:
-                    module.help()
-                    continue
+                    module.help_using_the_aplication()
+                    break
                 case 0:
                     module.loading_and_clear("Terima kasih (^-^)")
                     exit()
