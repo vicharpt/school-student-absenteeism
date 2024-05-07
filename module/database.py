@@ -9,16 +9,17 @@ config = ConfigParser()
 config.read("module/config/config.conf")
 
 database = {
+    "auth": bool(int(config["options"]["auth"])),
     "key": config["options"]["key"] if config["options"]["key"] else "admin",
     "information_status_symbol": {
-        "hadir": config["information status symbol"]["hadir"],
-        "izin": config["information status symbol"]["izin"],
-        "sakit": config["information status symbol"]["sakit"],
-        "alpha": config["information status symbol"]["alpha"],
+        "hadir": config["information_status_symbol"]["hadir"],
+        "izin": config["information_status_symbol"]["izin"],
+        "sakit": config["information_status_symbol"]["sakit"],
+        "alpha": config["information_status_symbol"]["alpha"],
     },
-    "show_status_code": bool(int(config["options"]["show_status_code"])),
+    "show_status_code": bool(int(config["options"]["information_succes"])),
     "class": config["class"]["class"],
-    "teacher": config["class"]["teacher"],
+    "teacher": config["class"]["teacher"] if config["class"]["teacher"] else "!!!nama guru belum diatur!!!",
     "siswa": siswa.siswa,
     "date": {
         "year": config["date"]["year"],

@@ -5,7 +5,7 @@ def auth(key):
     i = 1
     punishment = 2
     while True:
-        banner(f"selamat datang {database['teacher']}")
+        banner(f"selamat datang ({database['teacher']})")
         print(f"{'masukan kata sandi sebelum melanjutkan'.upper():^84}")
         print("="*84)
         auth = input("kata sandi >> ")

@@ -29,7 +29,7 @@ def create(data, date):
 
     file_action(date, mode="a", data=data)
     
-    if database["show_status_code"]:
+    if database["information_success"]:
         status_code("creating", f"{date['year']}/{date['month']}/{date['day']}")
 
 def read(date):

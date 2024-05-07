@@ -1,10 +1,9 @@
-data = {
-    "anjai": "mabar"
-}
 
-data = f"{data}"
 
-print(data['anjai'])
+
+
+
+
 
 
 
