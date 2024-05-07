@@ -1,10 +1,9 @@
 import os
-from glob import glob
 from copy import deepcopy
 
 from .code import shift
 from .database import database
-from .display import status_code, loading_and_clear
+from .display import status_code
 
 def file_action(date, mode="", data=""):
     file_name = f"{date['year']}-{date['month']}"
@@ -48,9 +47,9 @@ def read(date):
     except:
         return [date["year"], date["month"], date["day"],], ""
 
-get_year = lambda: [year for year in os.listdir(f"{os.getcwd()}/database") if not "." in year]
+# get_year = lambda: [year for year in os.listdir(f"{os.getcwd()}/database") if not "." in year]
 
-get_month = lambda year: [month for month in os.listdir(f"{os.getcwd()}/database/{year}") if not "." in month]
+# get_month = lambda year: [month for month in os.listdir(f"{os.getcwd()}/database/{year}") if not "." in month]
 
-def get_day():
-    data = file_action()
+# def get_day():
+#     data = file_action()

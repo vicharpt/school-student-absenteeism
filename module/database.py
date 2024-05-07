@@ -17,8 +17,8 @@ database = {
         "sakit": config["information_status_symbol"]["sakit"],
         "alpha": config["information_status_symbol"]["alpha"],
     },
-    "show_status_code": bool(int(config["options"]["information_succes"])),
-    "class": config["class"]["class"],
+    "information_success": bool(int(config["options"]["information_success"])),
+    "class": config["class"]["class"] if config["class"]["class"] else "!!!kelas belum diatur!!!",
     "teacher": config["class"]["teacher"] if config["class"]["teacher"] else "!!!nama guru belum diatur!!!",
     "siswa": siswa.siswa,
     "date": {
