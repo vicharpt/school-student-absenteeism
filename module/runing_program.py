@@ -71,7 +71,19 @@ def monitor_student_attendance():
 
 
 def help_using_the_aplication():
+    list_menu = database["library"]["menu"]
     while True:
         banner("petunjuk penggunaan aplikasi")
-        choice = menu(database["library"]["menu"], "kembali")
-        break
+        try:
+            choice = menu(list_menu, "kembali")
+
+            if choice < 1 or choice > len(list_menu):
+                loading_and_clear("Menu tidak tersedia!")
+                continue
+
+            banner(list_menu[choice-1])
+            match choice:
+                case 1:
+                    break
+        except ValueError:
+            loading_and_clear(error=True, message="Input harus berupa angka!")

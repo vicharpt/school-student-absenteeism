@@ -1,5 +1,5 @@
 petunjuk = {
-    "menu": ["penggunaan menu 1", "penggunaan menu 2"],
+    "menu": ["penggunaan menu 1", "penggunaan menu 2", "cara mengatur file configurasi"],
     "menu 1": {
         "feature": [
             "memberikan keterangan siswa dengan simbol yang tertera pada menu di bagian bawah tabel absensi",
