@@ -46,10 +46,3 @@ def read(date):
         return data_date, siswa
     except:
         return [date["year"], date["month"], date["day"],], ""
-
-# get_year = lambda: [year for year in os.listdir(f"{os.getcwd()}/database") if not "." in year]
-
-# get_month = lambda year: [month for month in os.listdir(f"{os.getcwd()}/database/{year}") if not "." in month]
-
-# def get_day():
-#     data = file_action()
