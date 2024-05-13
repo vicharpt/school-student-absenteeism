@@ -3,9 +3,11 @@ from .display import clear, menu, banner, table_absensi, sleep, loading_and_clea
 from .code import shift, format_status
 from .files import create, read
 from .date import date, now
+from copy import deepcopy
 
 
 def absensi(siswa):
+    siswa = deepcopy(siswa)
     date_config = True
     if f"{date['year']}{date['month']}{date['day']}" != now.strftime("%Y%m%d"):
         banner("anda melakukan konfigurasi pada penanggalan di config.conf")
