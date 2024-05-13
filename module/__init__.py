@@ -5,4 +5,5 @@ from .database import database
 from .files import create, read
 from .date import date
 
-# auth(database["key"])
+if database["auth"]:
+    auth(database["key"])

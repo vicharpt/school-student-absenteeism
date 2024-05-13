@@ -73,19 +73,46 @@ def monitor_student_attendance():
 
 
 def help_using_the_aplication():
-    list_menu = database["library"]["menu"]
+    def print_list_teks(list_teks):
+        for i, menu in enumerate(list_teks, 1):
+            print(f"{i}.) {menu}")
+        print("-"*84)
+        return input("Untuk mempermudah bisa langsung menekan enter untuk kembali >> ")
+    
+    def choose(menu_name, num_menu):
+        while True:
+            try:
+                banner(database["library"]["menu"][num_menu])
+                choice = menu(["fitur", "desain"], "kembali")
+                match choice:
+                    case 1:
+                        banner(f"fitur pada {menu_name}")
+                        print_list_teks(database["library"][menu_name]["feature"])
+                    case 2:
+                        banner(f"desain pada {menu_name}")
+                        print_list_teks(database["library"][menu_name]["design"])
+                    case 0:
+                        break
+                    case _:
+                        loading_and_clear(error=True, message="Menu tidak tersedia!")
+            except ValueError:
+                loading_and_clear(error=True, message="Input harus berupa angka!")
+    
     while True:
         banner("petunjuk penggunaan aplikasi")
         try:
-            choice = menu(list_menu, "kembali")
-
-            if choice < 1 or choice > len(list_menu):
-                loading_and_clear("Menu tidak tersedia!")
-                continue
-
-            banner(list_menu[choice-1])
+            choice = menu(database["library"]["menu"], "kembali")
             match choice:
                 case 1:
+                    choose("menu_1", choice-1)
+                case 2:
+                    choose("menu_2", choice-1)
+                case 3:
+                    banner(database["library"]["menu"][choice-1])
+                    print_list_teks(database["library"]["mengatur_konfigurasi_aplikasi"])
+                case 0:
                     break
+                case _:
+                    loading_and_clear(error=True, message="Menu tidak tersedia!")
         except ValueError:
             loading_and_clear(error=True, message="Input harus berupa angka!")
