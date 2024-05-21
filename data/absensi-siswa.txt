@@ -1,0 +1,22 @@
+/** PROGRAM APLIKASI ABSENSI SISWA **/
+
+    Kami membuat aplikasi ini bertujuan untuk memudahkan saat melakukan absensi siswa.
+Alasan kami membuat aplikasi ini adalah karena biasanya kertas absensi nya sering hilang
+jadi kami membuat program ini.
+
+aplikasi yang kami buat memeiliki fitur seperti berikut :
+- memiliki pengaturan konfigurasi aplikasi
+- history data absensi yang berbentuk file (.txt)
+- history data permanent kecuali di hapus
+- history berdasarkan tahub bulan dan tanggal dibuat, kecuali mengkonfigurasinya pada file (config.conf)
+- history data terenkripsi dengan algoritma penggeseran karakter berdasarkan key, key tersebut terdapat pada pengaturan konfigurasi
+
+    Untuk info lebih lanjut bisa langsung di coba aplikasinya. Saya sarankan untuk mengunduh source codenya di (https://github.com/vicharpt/school-student-absenteeism)
+mungkin itu saja terima kasih...
+
+Anggota Kelompok :
+1. Indra Saputra
+2. Muhammad Nofal
+3. Angelina Amelia Putri
+4. Risky Mutiara Fitri
+5. Nikita Tiara Maulidia
